@@ -80,6 +80,13 @@
             '';
 
             postInstall = ''
+              pushd /build/$sourceRoot
+              for f in $(find . -name '__init__.py'); do
+                if [[ ! -e $out/lib/python${pythonMajorMinorVersion}/site-packages/$f ]]; then
+                  cp $f $out/lib/python${pythonMajorMinorVersion}/site-packages/$f;
+                fi
+              done
+              popd
               mkdir $out/dist
               cp dist/${wheelName} $out/dist
               jq ".url = \"$out/dist/${wheelName}\"" $out/lib/python${pythonMajorMinorVersion}/site-packages/${pnameWithUnderscores}-${version}.dist-info/direct_url.json > temp.json && mv temp.json $out/lib/python${pythonMajorMinorVersion}/site-packages/${pnameWithUnderscores}-${version}.dist-info/direct_url.json
