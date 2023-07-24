@@ -8,8 +8,11 @@ homepage = "@homepage@"
 packages = [{include = "@package@"}]
 
 [tool.poetry.dependencies]
+dbus-next = "^@dbusNextVersion@"
+grpcio = "^@grpcioVersion@"
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomainVersion@"
+requests = "^@requestsVersion@"
 
 [build-system]
 requires = ["poetry-core"]

@@ -53,6 +53,9 @@
               inherit homepage pname pythonMajorMinorVersion pythonpackage
                 version;
               package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
+              dbusNextVersion = python.pkgs.dbus-next.version;
+              grpcioVersion = python.pkgs.grpcio.version;
+              requestsVersion = python.pkgs.requests.version;
               pythonedaSharedPythonedaDomainVersion =
                 pythoneda-shared-pythoneda-domain.version;
               src = pyprojectTemplateFile;
@@ -67,8 +70,12 @@
             format = "pyproject";
 
             nativeBuildInputs = with python.pkgs; [ pip pkgs.jq poetry-core ];
-            propagatedBuildInputs = with python.pkgs;
-              [ pythoneda-shared-pythoneda-domain ];
+            propagatedBuildInputs = with python.pkgs; [
+              dbus-next
+              grpcio
+              pythoneda-shared-pythoneda-domain
+              requests
+            ];
 
             pythonImportsCheck = [ pythonpackage ];
 
