@@ -32,35 +32,6 @@
         "type": "github"
       }
     },
-    "pythoneda-realm-rydnr-events": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixos": [
-          "nixos"
-        ],
-        "pythoneda-shared-pythoneda-domain": [
-          "pythoneda-shared-pythoneda-domain"
-        ]
-      },
-      "locked": {
-        "dir": "events",
-        "lastModified": 1689926480,
-        "narHash": "sha256-C6D2m8H8OLVgEisxv4PrrklryRtrEfitwxpeyoKp52E=",
-        "owner": "pythoneda-realm-rydnr",
-        "repo": "events-artifact",
-        "rev": "a49af2892ca94582855dc2c228416caf1230b1ae",
-        "type": "github"
-      },
-      "original": {
-        "dir": "events",
-        "owner": "pythoneda-realm-rydnr",
-        "ref": "0.0.1a1",
-        "repo": "events-artifact",
-        "type": "github"
-      }
-    },
     "pythoneda-shared-pythoneda-domain": {
       "inputs": {
         "flake-utils": [
@@ -91,7 +62,6 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixos": "nixos",
-        "pythoneda-realm-rydnr-events": "pythoneda-realm-rydnr-events",
         "pythoneda-shared-pythoneda-domain": "pythoneda-shared-pythoneda-domain"
       }
     }
