@@ -2,7 +2,7 @@
 #
 # This file packages pythoneda-shared-pythoneda/infrastructure as a Nix flake.
 #
-# Copyright (C) 2023-today rydnr's pythoneda-shared-pythoneda/infrastructure
+# Copyright (C) 2023-today rydnr's pythoneda-shared-pythoneda/infrastructure-artifact
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,13 +22,13 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-pythoneda-banner = {
-      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a5";
+      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a6";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a28?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a29?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -47,8 +47,7 @@
         pkgs = import nixos { inherit system; };
         description = "Shared kernel for infrastructure layers";
         license = pkgs.lib.licenses.gpl3;
-        homepage =
-          "https://github.com/pythoneda-shared-pythoneda/infrastructure";
+        homepage = "https://github.com/${org}/${repo}";
         maintainers = [ "rydnr <github@acm-sl.org>" ];
         archRole = "S";
         space = "_";
