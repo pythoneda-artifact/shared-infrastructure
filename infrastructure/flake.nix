@@ -22,13 +22,13 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-pythoneda-banner = {
-      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a13";
+      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a16";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a33?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a35?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -41,8 +41,8 @@
       let
         org = "pythoneda-shared-pythoneda";
         repo = "infrastructure";
-        version = "0.0.1a15";
-        sha256 = "sha256-8VlJdn4c2wbxDYHlZXYfip7auPYcxzDjcyOuH6zLv3Q=";
+        version = "0.0.1a16";
+        sha256 = "sha256-YdEtmZ3NORdVB6sDYehNTeReC/gXx3SIDr0e5euCY/M=";
         pname = "${org}-${repo}";
         pkgs = import nixos { inherit system; };
         description = "Shared kernel for infrastructure layers";
